@@ -8,6 +8,20 @@ Base = declarative_base()
 
 
 class User(SQLAlchemyBaseUserTable[int], Base):
+    """
+    Модель таблицы пользователей в базе данных
+
+    Столбцы:
+        id(int): уникальный идентификатор пользователя
+        username(str): Имя пользователя
+        email(str): почта пользователя
+        registered_at(timestamp): ата регистрации пользователя
+        hashed_password(str): захэшированный пароль
+        is_active(bool): активность пользователя
+        is_superuser(bool): проверяет является пользователя супер юзером или нет
+        is_verified(bool): проверяет верифицированность пользователя
+
+    """
     __tablename__ = "user"
 
     id: int = Column(Integer, primary_key=True)

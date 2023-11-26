@@ -7,6 +7,11 @@ SECRET = "SECRET"
 
 
 def get_jwt_strategy() -> JWTStrategy:
+    """
+    Метод который управляет как генерируется и защищается токен
+
+    :return токен доступа типа JSON
+    """
     return JWTStrategy(secret=SECRET, lifetime_seconds=3600)
 
 
